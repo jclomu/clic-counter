@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Gradiente dinámico */
+        body {
+            background: linear-gradient(45deg, #ff6ec4, #7873f5);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Glassmorfismo */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center h-screen">
+    <h1 class="text-6xl font-bold underline text-gray-200 mb-10">
+        Contador de clics
+    </h1>
+    <section class="container flex flex-col justify-center items-center glass p-10">
+
+        <div class="grid grid-cols-3 gap-10 mb-10">
+            <span class="bg-gray-900 w-20 h-20 flex items-center justify-center text-2xl text-gray-200 cursor-pointer transform transition-transform duration-200 glass" id="square1">1</span>
+            <span class="bg-gray-900 w-20 h-20 flex items-center justify-center text-2xl text-gray-200 cursor-pointer transform transition-transform duration-200 glass" id="square2">2</span>
+            <span class="bg-gray-900 w-20 h-20 flex items-center justify-center text-2xl text-gray-200 cursor-pointer transform transition-transform duration-200 glass" id="square3">3</span>
+        </div>
+
+        <div class="flex justify-between text-gray-200 text-center mb-10 glass p-4">
+            <div>
+                <p id="display1">0</p>
+            </div>
+            <div class="mx-10">
+                <p id="display2">0</p>
+            </div>
+            <div>
+                <p id="display3">0</p>
+            </div>
+        </div>
+
+        <div class="text-center text-gray-200 glass p-4 mb-5">
+            <p id="timer">Tiempo restante: </p>
+        </div>
+
+        <button class="bg-red-700 hover:bg-red-300 transition-all text-gray-200 px-10 py-3 rounded-lg mt-5" id="restartBtn">Reiniciar Juego</button>
+
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
